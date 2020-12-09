@@ -309,20 +309,15 @@ def preOrderTree( node):
     nlist.append( node.name)
     nlist.append( "\n")
 
-    # pointer diagrams for Right and Left child
-    pointerR = "└── " 
-    if (node.childB != None):
-        pointerL = "├──"
-    else:
-        pointerL = "└──"
+    pointer = "|___"
 
     hasChildB = False
     if( node.childB != None):
         hasChildB = True
 
     # traverse to children nodes
-    visitNodes( node.childA, nlist, " ", pointerL, hasChildB )
-    visitNodes( node.childB, nlist, " ", pointerR, False)
+    visitNodes( node.childA, nlist, " ", pointer, hasChildB )
+    visitNodes( node.childB, nlist, " ", pointer, False)
 
     return nlist
 
@@ -344,19 +339,15 @@ def visitNodes( node, nlist, padding, pointer, hasChildB):
         else:
             padding = padding + "  "
             
-        pointerR = "└──" 
-        if (node.childB != None):
-            pointerL = "├──"
-        else:
-            pointerL = "└──"
+        pointer = "|___"
 
         hasChildB = False
         if( node.childB != None):
             hasChildB = True
 
         # recursive call to traverse further into tree
-        visitNodes( node.childA, nlist, padding, pointerL, hasChildB )
-        visitNodes( node.childB, nlist, padding, pointerR, False)
+        visitNodes( node.childA, nlist, padding, pointer, hasChildB )
+        visitNodes( node.childB, nlist, padding, pointer, False)
 
 # output the obtained results
 def toOutput( node):
