@@ -355,7 +355,7 @@ def toOutput( node):
     # information about grouped dna and the nodes connecting them
     if( node.type == "Node"):
         print(" NodeName = ", node.name)
-        print(" ChildA = ", node.childA.name,"\n ChildB = ", node.childB.name)
+        print("\tChildA = ", node.childA.name,"\n\tChildB = ", node.childB.name)
         toOutput( node.childA)
         toOutput( node.childB)    
     
